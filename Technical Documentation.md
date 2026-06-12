@@ -87,6 +87,7 @@ This caused the ingestion process to fail because PostgreSQL attempted to insert
 Attempts to modify constraints directly resulted in errors due to primary key dependency.
 #### Resolution
 To resolve the ingestion issue, the table was dropped and recreated with a more flexible schema:
+
 CREATE TABLE market_prices (
 date DATE,
 ticker VARCHAR(10),
@@ -99,6 +100,7 @@ volume BIGINT,
 data_source VARCHAR(50),
 load_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 After successful data ingestion, the missing ticker values were populated:
 UPDATE market_prices
 SET ticker = 'SPY'

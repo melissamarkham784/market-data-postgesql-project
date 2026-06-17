@@ -22,7 +22,7 @@ Historical SPY ETF market data (Kaggle)
 ## Data Model
 ### Table: market_prices
 Fields:
-date
+'''date'''
 ticker
 open_price
 high_price
